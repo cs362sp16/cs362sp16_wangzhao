@@ -661,7 +661,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
   }
-  
+ 
 	
   //uses switch to select card and perform actions
   switch( card ) 
@@ -687,29 +687,15 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       }
       return 0;
 			
+			
+			
     case council_room:
-      //+4 Cards
-      for (i = 0; i < 4; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
+	
+	  return function_renamed_council_room(state, currentPlayer, handPos);
 			
-      //+1 Buy
-      state->numBuys++;
 			
-      //Each other player draws a card
-      for (i = 0; i < state->numPlayers; i++)
-	{
-	  if ( i != currentPlayer )
-	    {
-	      drawCard(i, state);
-	    }
-	}
 			
-      //put played card in played card pile
-      discardCard(handPos, currentPlayer, state, 0);
 			
-      return 0;
 			
     case feast:
       //gain card with cost up to 5
@@ -828,27 +814,22 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
       return 0;
 		
-    case smithy:
-      //+3 Cards
-      for (i = 0; i < 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+		
+		
+		
+    case smithy:  
+		return function_renamed_smithy(state, currentPlayer, handPos);
+		
+		
+		
+		
 		
     case village:
-      //+1 Card
-      drawCard(currentPlayer, state);
-			
-      //+2 Actions
-      state->numActions = state->numActions + 2;
-			
-      //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      
+	  return function_renamed_village(state, currentPlayer, handPos);
+		
+		
+		
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -902,15 +883,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case great_hall:
-      //+1 Card
-      drawCard(currentPlayer, state);
-			
-      //+1 Actions
-      state->numActions++;
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      
+	  return function_renamed_great_hall(state, currentPlayer, handPos);
+	  
+	  
+	  
+	  
 		
     case minion:
       //+1 action
@@ -1102,41 +1080,18 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	}			
 
       return 0;
+	  
+	  
+	  
+	  
 		
     case cutpurse:
 
-      updateCoins(currentPlayer, state, 2);
-      for (i = 0; i < state->numPlayers; i++)
-	{
-	  if (i != currentPlayer)
-	    {
-	      for (j = 0; j < state->handCount[i]; j++)
-		{
-		  if (state->hand[i][j] == copper)
-		    {
-		      discardCard(j, i, state, 0);
-		      break;
-		    }
-		  if (j == state->handCount[i])
-		    {
-		      for (k = 0; k < state->handCount[i]; k++)
-			{
-			  if (DEBUG)
-			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
-			}	
-		      break;
-		    }		
-		}
-					
-	    }
-				
-	}				
+	   return function_renamed_cutpurse(state, currentPlayer, handPos);
 
-      //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 0);			
-
-      return 0;
-
+		
+		
+		
 		
     case embargo: 
       //+2 Coins
@@ -1327,7 +1282,130 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+ 
+  
+  
+  // add five changed function here
+  int function_renamed_council_room(struct gameState *state,int currentPlayer,int handPos){
+	  	//changed to function
+      //+4 Cards
+	  int i;
+	  
+      for (i = 0; i < 4; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+			
+      //+1 Buy
+      state->numBuys++;
+			
+      //Each other player draws a card
+      for (i = 0; i < state->numPlayers; i++)
+	{
+	  if ( i != currentPlayer )
+	    {
+	      drawCard(i, state);
+	    }
+	}
+			
+      //put played card in played card pile
+      discardCard(handPos, currentPlayer, state, 0);
+			
+      return 0;
+	  
+  }
+  
+  // second function
+  int function_renamed_smithy(struct gameState *state,int currentPlayer, int handPos){
+	  
+	  // change this cards to function
+      //+3 Cards
+	  int i;
+	  
+      for (i = 0; i < 3; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+			
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+	  return 0;
+	  
+  }
+  
+  // third function
+  int function_renamed_village(struct gameState *state,int currentPlayer,int handPos){
+	  //+1 Card
+      drawCard(currentPlayer, state);
+			
+      //+2 Actions
+      state->numActions = state->numActions + 2;
+			
+      //discard played card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+     
+	 return 0;
+	  
+	  
+  }
+  
+  // one more 
+  
+  function_renamed_great_hall(struct gameState *state,int currentPlayer,int handPos){
+  
+  //+1 Card
+      drawCard(currentPlayer, state);
+			
+      //+1 Actions
+      state->numActions++;
+			
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+  
+  }
+  
+  // last one
+  int function_renamed_cutpurse(struct gameState *state,int currentPlayer,int handPos){
+	  // last case changed
+	  int i,j,k;
+	   
+      updateCoins(currentPlayer, state, 2);
+      for (i = 0; i < state->numPlayers; i++)
+	{
+	  if (i != currentPlayer)
+	    {
+	      for (j = 0; j < state->handCount[i]; j++)
+		{
+		  if (state->hand[i][j] == copper)
+		    {
+		      discardCard(j, i, state, 0);
+		      break;
+		    }
+		  if (j == state->handCount[i])
+		    {
+		      for (k = 0; k < state->handCount[i]; k++)
+			{
+			  if (DEBUG)
+			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+			}	
+		      break;
+		    }		
+		}
+					
+	    }
+				
+	}				
 
+      //discard played card from hand
+      discardCard(handPos, currentPlayer, state, 0);			
+
+      return 0;
+	  
+  }
+  
+  
+  
 
 //end of dominion.c
 
