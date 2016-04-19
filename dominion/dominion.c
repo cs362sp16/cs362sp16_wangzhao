@@ -1289,9 +1289,10 @@ int updateCoins(int player, struct gameState *state, int bonus)
   int function_renamed_council_room(struct gameState *state,int currentPlayer,int handPos){
 	  	//changed to function
       //+4 Cards
+	  // add bugs
 	  int i;
 	  
-      for (i = 0; i < 4; i++)
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1320,9 +1321,10 @@ int updateCoins(int player, struct gameState *state, int bonus)
 	  
 	  // change this cards to function
       //+3 Cards
+	  // add bugs
 	  int i;
 	  
-      for (i = 0; i < 3; i++)
+      for (i = 0; i < 2; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
