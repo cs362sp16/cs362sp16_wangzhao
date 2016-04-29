@@ -1,0 +1,15 @@
+wang,zhaoheng
+
+unit test for function:
+My unit test for the functions are all passed and i don't find any bugs for it.
+
+unit test for cards:
+i find two bugs on the card smithy and council_room.
+
+1 smithy card should draw 3 cards however it only draw two cards.
+
+2 council_room should draw 4 cards however it only draw three cards.
+
+In the first assignment, i changed these two cards and add bugs for these two cards. As a result, there are two bugs for these two cards.
+
+test coverage for total is Lines executed:21.51% of 558. It actually not a large number of the test. i think it is because we only pick several functions to do the unit test.

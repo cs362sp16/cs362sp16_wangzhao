@@ -1,0 +1,16 @@
+The five i choose:
+ 1  council_room
+ 2  smithy
+ 3  village
+ 4 great_hall
+ 5 cutpurse
+
+The new function name are:
+function_renamed_council_room
+function_renamed_smithy
+function_renamed_village
+function_renamed_great_hall
+function_renamed_cutpurse
+
+For each function i delete code below each case and change it to return the function. After that i create five new functions and add the code for each function base on the code below the case.
+i also make two changes in function so there will be two bugs.
