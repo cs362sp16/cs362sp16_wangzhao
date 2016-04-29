@@ -14,14 +14,14 @@ int main(){
   
   initializeGame(2, k, 5, &g);
   
-  printf("---------------unit test 4 for the shuffle function (start)---------------------");
+  printf("---------------unit test 4 for the shuffle function (start)---------------------\n");
   
   // check when state->deckCount[player] < 1
   
   g.deckCount[1] = 0;
   r = shuffle(1,&g);
   if (r == -1){
-  printf(" when state->deckCount[player] < 1, it returns -1");
+  printf(" when state->deckCount[player] < 1, it returns -1\n");
   }
   g.deckCount[1] = 5;
   
@@ -29,12 +29,12 @@ int main(){
   // 5>1 so should return 0
   
   if (r == 0){
-  printf(" it is correct");
+  printf(" it is correct\n");
   }
   else{
-  printf(" there is something wrong");
+  printf(" there is something wrong\n");
   }
   
-  printf("---------------unit test 4 for the shuffle function (end)---------------------");
+  printf("---------------unit test 4 for the shuffle function (end)---------------------\n");
 	return 0;
 }

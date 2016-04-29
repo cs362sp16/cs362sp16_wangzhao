@@ -5,9 +5,15 @@ this is correct and the unit test successfully completed
 --------------------unit test 2  for kingdomCards( start) -------------------------------------- 
  the test pass and return is correct
 ---------------unit test 2  for kingdomCards( end) -------------------------------------- 
-----------unit test 3 for whose Turn(start) --------------------------start at 0 initialized correctly.
+----------unit test 3 for whose Turn(start) --------------------------
+start at 0 initialized correctly.
  change to 1 is correct.
-----------unit test 3 for whose Turn(end) -----------------------------------------unit test 4 for the shuffle function (start)--------------------- when state->deckCount[player] < 1, it returns -1 it is correct---------------unit test 4 for the shuffle function (end)----------------------------------card test 1 for smithy (start) ----------------------
+----------unit test 3 for whose Turn(end) --------------------------
+---------------unit test 4 for the shuffle function (start)---------------------
+ when state->deckCount[player] < 1, it returns -1
+ it is correct
+---------------unit test 4 for the shuffle function (end)---------------------
+-------------card test 1 for smithy (start) ----------------------
 num_start: 5
 nums: 6
 there have bugs in the smithy card
@@ -25,11 +31,11 @@ nums: 5
 it is correct for effectfunction 
  it is correct and test pass
 ----------------------unit test 3 for the great_hall(end)----------------------------
- ----------------------unit test 2 for the council_room(start)----------------------------
+ ----------------------unit test 4 for the council_room(start)----------------------------
  num_start: 5
 nums: 7
 there have some bugs in council_room
-----------------------unit test 2 for the village(end)----------------------------
+----------------------unit test 4 for the council_room(end)----------------------------
  File 'dominion.c'
 Lines executed:21.51% of 558
 Creating 'dominion.c.gcov'

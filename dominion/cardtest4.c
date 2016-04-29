@@ -53,7 +53,7 @@ int main(){
 	
 	
 	
-	printf ("----------------------unit test 4 for the village(end)----------------------------\n ");
+	printf ("----------------------unit test 4 for the council_room(end)----------------------------\n ");
 	
 	return 0;
 }

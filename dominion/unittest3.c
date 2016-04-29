@@ -15,7 +15,7 @@ int main() {
 
   int r = initializeGame(2, k, 5, &g);
    // initialize game like what example do
-   printf("----------unit test 3 for whose Turn(start) --------------------------");
+   printf("----------unit test 3 for whose Turn(start) --------------------------\n");
   
 	//start at 0
 	current = whoseTurn(&g);
@@ -36,6 +36,6 @@ int main() {
 	printf("there is something wrong with the function.\n");
 	}
 	
-	printf("----------unit test 3 for whose Turn(end) --------------------------");
+	printf("----------unit test 3 for whose Turn(end) --------------------------\n");
 	return 0;
 }
