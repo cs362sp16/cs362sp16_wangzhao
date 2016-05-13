@@ -1,3 +1,11 @@
+--------------random test for the village(start) ------------------------
+before the test error number will be: 0
+ after 100 times of test the error number will be: 200
+ ------------------------random test for the village(start)-----------------------
+File 'dominion.c'
+Lines executed:19.35% of 558
+Creating 'dominion.c.gcov'
+
         -:    0:Source:dominion.c
         -:    0:Graph:dominion.gcno
         -:    0:Data:dominion.gcda
