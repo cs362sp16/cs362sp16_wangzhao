@@ -1,0 +1,14 @@
+assignment3
+
+wang,zhaoheng
+
+base on the results of test, the coverage of smithy is 100%. 
+the randomtestcard1.out shows:
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+i set 100 times for test loop and i feel the random test will have higher coverage than the unit test becase it almost cover check all conditions(by using random variable) for the card that we want to test.
+however, the unit test will not use random variable and it might check some specific case inside of random case. As a result, the unit test may not have the higher than the random test. 
+i think the random test will have better fault detection capability because it almost test all the possibility of the case
