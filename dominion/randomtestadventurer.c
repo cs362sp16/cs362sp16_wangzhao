@@ -93,7 +93,7 @@ int main (){
  
  printf("after test the error number will be: %d\n ",num);
  
- printf("------------------------random test for the adventurer(start)-----------------------\n");
+ printf("------------------------random test for the adventurer(end)-----------------------\n");
  
  return 0;
   

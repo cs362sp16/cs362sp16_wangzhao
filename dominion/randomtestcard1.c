@@ -8,7 +8,7 @@
 #include <assert.h>
 #include <time.h>
 
-// smithy +3 actions 
+// smithy +3 cards 
 
 
 int main (){
@@ -86,7 +86,7 @@ int main (){
   // after is to get the number of cards in hand before use the card
   after = numHandCards(&g);
   
-  // the effect of card village is to add 3 cards
+  // the effect of card smithy is to add 3 cards
   
   if (after - before != 3){
    
@@ -98,7 +98,7 @@ int main (){
  
  printf("after 100 times of test the error number will be: %d\n ",num);
  
- printf("------------------------random test for the adventurer(end)-----------------------\n");
+ printf("------------------------random test for the smithy(end)-----------------------\n");
  
  return 0;
   

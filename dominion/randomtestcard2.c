@@ -19,7 +19,7 @@ int main (){
  struct gameState g;
  
  
- // this is the random test for the adventure 
+ // this is the random test for the village
  
  // pick 100 be the test times
  
@@ -111,7 +111,7 @@ int main (){
  
  printf("after 100 times of test the error number will be: %d\n ",num);
  
- printf("------------------------random test for the village(start)-----------------------\n");
+ printf("------------------------random test for the village(end)-----------------------\n");
  
  return 0;
   
