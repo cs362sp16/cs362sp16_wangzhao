@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo " current at :"
+pwd
+echo " the first and the second are for the dir"
+echo " the third for the seed"
+echo " run as: filename  dir1  dir2 seed"
+
 home=`pwd`
 
 cd $1
@@ -8,13 +14,15 @@ pwd
 
 make testdominion
 
+rm diff1.out
+
 ./testdominion $3 >> diff1.out
 
-rm diff1.out
+
 
 mv diff1.out $home
 
-gcov dominion.c 
+gcov -f -b dominion.c 
 
 cd $2
 
@@ -22,10 +30,12 @@ pwd
 
 make testdominion	
 
-./testdominion $3 >> diff2.out
 rm diff2.out
+
+./testdominion $3 >> diff2.out
+
 mv diff2.out $home
-gcov dominion.c 
+gcov -f -b dominion.c 
 
 diff diff1.out diff2.out > diff3.out
 if [ ! -s diff3.out ]	
