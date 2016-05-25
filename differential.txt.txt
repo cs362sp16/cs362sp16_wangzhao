@@ -1,0 +1,23 @@
+wang,zhaoheng
+i use the diffdominion to test my work with myself. and use different seeds to test and the result shows "test failed" but the coverage are the same. i think this is because there exist some bugs in my diffdominion file.
+
+when i test my work with my classmates. 
+it shows the coverage of my :
+File 'dominion.c'
+Lines executed:42.29% of 558
+Branches executed:50.12% of 417
+Taken at least once:32.13% of 417
+Calls executed:26.32% of 95
+
+i think this is because the run time is less than 20 times and i might miss some function for testing
+
+and the test for my classmates:
+File 'dominion.c'
+Lines executed:63.20% of 559
+Branches executed:67.60% of 417
+Taken at least once:52.57% of 417
+Calls executed:55.74% of 94
+Creating 'dominion.c.gcov'
+
+
+

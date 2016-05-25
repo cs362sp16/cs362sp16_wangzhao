@@ -48,6 +48,8 @@ r2:
 r3:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestcard2.c rngs.c -o randomtestcard2 -lm -g
 
+testdominion:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c testdominion.c rngs.c -o testdominion -lm -g
 
 rand1:
 	./randomtestadventurer &> randomtestadventurer.out
@@ -81,6 +83,8 @@ t: testdominion.c dominion.o rngs.o
 	./testdominion 42 >> testdominion.out
 	gcov -f -b dominion.c &> testdominion.out
 	cat dominion.c.gcov >> testdominion.out
+	
+
 
 all: playdom player
 

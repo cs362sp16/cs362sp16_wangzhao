@@ -1,0 +1,36 @@
+#!/bin/bash
+
+home=`pwd`
+
+cd $1
+
+pwd
+
+make testdominion
+
+./testdominion $3 >> diff1.out
+
+rm diff1.out
+
+mv diff1.out $home
+
+gcov dominion.c 
+
+cd $2
+
+pwd
+
+make testdominion	
+
+./testdominion $3 >> diff2.out
+rm diff2.out
+mv diff2.out $home
+gcov dominion.c 
+
+diff diff1.out diff2.out > diff3.out
+if [ ! -s diff3.out ]	
+	then
+		echo "TEST PASSED"
+	else
+		echo "TEST FAILED"
+fi
