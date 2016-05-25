@@ -47,38 +47,14 @@ void getthevalue(struct gameState *g, int numPlayers) {
     
 }
 
-/*
-int getnumberofmoney(struct gameState *g){
-	int i = 0;
-	int c = 0;
-	int account = 0;
-	c = handCard(i, g);
-	
-	for(i = 0; i < numHandCards(g); i++){			
-    	if(c == copper){
-   	 		
-			account = account+1;
-		}
-		
-   	    if(c == silver){
-    		
-			account = account+2;
-		
-		}
-        if(c == gold){
-    		account = account+3;
-    	}
-   	}
-   	return account;
-}
-*/
+
 
 int main (int argc, char* argv[]) {
 	
 	
 	int s; // seed
 
-	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy};
+	int k[10] = {smithy,adventurer,gardens,embargo,cutpurse,mine,ambassador,outpost,baron,tribute};
 	
 	int acount = 0;
 	

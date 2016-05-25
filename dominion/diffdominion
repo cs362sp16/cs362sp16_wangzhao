@@ -12,15 +12,12 @@ cd $1
 
 pwd
 
-make testdominion
-
 rm diff1.out
 
+make testdominion
+
+
 ./testdominion $3 >> diff1.out
-
-
-
-mv diff1.out $home
 
 gcov -f -b dominion.c 
 
@@ -28,14 +25,19 @@ cd $2
 
 pwd
 
-make testdominion	
-
 rm diff2.out
+
+make testdominion	
 
 ./testdominion $3 >> diff2.out
 
-mv diff2.out $home
+mv diff2.out $1
+
 gcov -f -b dominion.c 
+
+pwd
+
+cd ..
 
 diff diff1.out diff2.out > diff3.out
 if [ ! -s diff3.out ]	
