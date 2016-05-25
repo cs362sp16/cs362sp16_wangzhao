@@ -1,5 +1,6 @@
 wang,zhaoheng
 i use the diffdominion to test my work with myself. and use different seeds to test and the result shows "test failed" but the coverage are the same. i think this is because there exist some bugs in my diffdominion file.
+i also test my work with my classmates however the test result shows "test failed"
 
 when i test my work with my classmates. 
 it shows the coverage of my :
