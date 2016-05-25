@@ -74,6 +74,13 @@ savealltest:
 	./cardtest4 >> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
+	
+t: testdominion.c dominion.o rngs.o
+	gcc -o testdominion -std=c99 testdominion.c dominion.o rngs.o $(CFLAGS)	
+	rm -f testdominion.out
+	./testdominion 42 >> testdominion.out
+	gcov -f -b dominion.c &> testdominion.out
+	cat dominion.c.gcov >> testdominion.out
 
 all: playdom player
 
