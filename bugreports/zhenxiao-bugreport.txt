@@ -1,0 +1,9 @@
+After runing the test there exist a bug in fvillage(struct gameState *state, int handPos) function in dominion.c
+
+at line 89 
+the code shows :
+state->numActions = state->numActions + 1;
+
+however, the village should add two actions
+
+so the statement should be state->numActions = state->numActions + 2;
