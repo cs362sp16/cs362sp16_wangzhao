@@ -2,42 +2,63 @@
 
 echo " current at :"
 pwd
-echo " the first and the second are for the dir"
+echo " the first and the second are for the directory"
 echo " the third for the seed"
-echo " run as: filename  dir1  dir2 seed"
+echo " run as: filename  directory1  directory2 seed"
 
-home=`pwd`
-
+# $1 is the the directory 1 
 cd $1
+
+echo " change to the directory 1:"
+
+echo " current at directory 1 :"
 
 pwd
 
 rm diff1.out
 
-make testdominion
+#  compile the dominion with testdominion.c called testdiff 
 
+# $3 is the seed
 
-./testdominion $3 >> diff1.out
+gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c testdominion.c rngs.c -o testdiff -lm -g
+
+./testdiff $3 >> diff1.out
 
 gcov -f -b dominion.c 
 
+# $1 is the the directory 2
 cd $2
+
+echo "change to the directory 2:"
+
+echo " current at directory 2:"
 
 pwd
 
 rm diff2.out
 
-make testdominion	
+# compile the dominion with testdominion.c called testdiff 
 
-./testdominion $3 >> diff2.out
+
+gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c testdominion.c rngs.c -o testdiff -lm -g	
+
+./testdiff $3 >> diff2.out
 
 mv diff2.out $1
 
 gcov -f -b dominion.c 
 
+
+echo " current at :"
+
 pwd
 
 cd ..
+
+echo " current at :"
+
+pwd
 
 diff diff1.out diff2.out > diff3.out
 if [ ! -s diff3.out ]	
