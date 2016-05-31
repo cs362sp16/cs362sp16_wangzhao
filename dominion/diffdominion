@@ -27,7 +27,7 @@ gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c testdominion.c rngs
 
 gcov -f -b dominion.c 
 
-# $1 is the the directory 2
+# $2 is the the directory 2
 cd $2
 
 echo "change to the directory 2:"
