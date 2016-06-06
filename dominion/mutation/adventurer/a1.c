@@ -681,7 +681,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	  z++;
 	}
       }
-      while(z-1>=0){
+      while(z-1 !>=0){  // origin code z-1 >= 0 
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
@@ -1291,8 +1291,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+4 Cards
 	  // add bugs
 	  int i;
-	  // fix bug i < 3 
-      for (i = 0; i < 4; i++)
+	  
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1323,8 +1323,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+3 Cards
 	  // add bugs
 	  int i;
-	  // fix bugs i< 2
-      for (i = 0; i < 3; i++)
+	  
+      for (i = 0; i < 2; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}

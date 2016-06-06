@@ -30,10 +30,15 @@ The understand the game rules is necessary to figure out where might have a bug.
 For example, the bugs i make in first assignemnt is change the times of draw card in card function
 if we don't understand game rule, we will not find the bug like this.
 
-(2)Make it fail:
-it is important to locate where might have a bug.
-
 (3)Quit thinking and look:
 Based on the test result, it shows the where exist the error. 
-Fix the bug after locating base on the data of testing. 
-  
+Fix the bug after locating base on the data of testing.
+
+(4)Divide and conquer
+i think this is very useful way to locate a bug and find the bug in a short time.
+when i run the my test i find there exist some bugs in smithy and council_room because
+the number of cards are not correct. so i first go to the drawcard function in dominion.c
+and make sure the drawcard function is correct after that i go back to the smithy and council_room.
+
+(9)If you didn't fix it, it ain't fixed
+when i fix a bug before continue to find the bugs, i run the test again and make sure the output is correct and the bugs is fixed.

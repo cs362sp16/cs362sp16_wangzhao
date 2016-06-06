@@ -1291,8 +1291,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+4 Cards
 	  // add bugs
 	  int i;
-	  // fix bug i < 3 
-      for (i = 0; i < 4; i++)
+	  
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1323,14 +1323,15 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+3 Cards
 	  // add bugs
 	  int i;
-	  // fix bugs i< 2
+	  
       for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+	  //discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 2);
 	  return 0;
 	  
   }

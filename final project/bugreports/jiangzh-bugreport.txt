@@ -1,0 +1,9 @@
+After runing the test there exist a bug in council_room_function(struct gameState *state, int currentPlayer, int handPos) line 1282 dominion.c
+
+line 1285 - 1286 shows
+for(i=0; i<3; i++)
+      drawCard(currentPlayer, state);
+
+however in the council-room  it should draw 4 cards
+
+it should be i<4 not i<3

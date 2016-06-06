@@ -1291,8 +1291,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+4 Cards
 	  // add bugs
 	  int i;
-	  // fix bug i < 3 
-      for (i = 0; i < 4; i++)
+	  
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1323,8 +1323,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+3 Cards
 	  // add bugs
 	  int i;
-	  // fix bugs i< 2
-      for (i = 0; i < 3; i++)
+	  
+      for (i = 0; i < 2; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1338,7 +1338,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
   // third function
   int function_renamed_village(struct gameState *state,int currentPlayer,int handPos){
 	  //+1 Card
-      drawCard(currentPlayer, state);
+	  //  drawCard(currentPlayer, state);
+      drawCard(currentPlayer+1, state);
 			
       //+2 Actions
       state->numActions = state->numActions + 2;

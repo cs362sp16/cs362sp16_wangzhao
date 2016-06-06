@@ -672,7 +672,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	  shuffle(currentPlayer, state);
 	}
 	drawCard(currentPlayer, state);
-	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+	// original code cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1]
+	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
 	else{
@@ -1291,8 +1292,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+4 Cards
 	  // add bugs
 	  int i;
-	  // fix bug i < 3 
-      for (i = 0; i < 4; i++)
+	  
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1323,8 +1324,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
       //+3 Cards
 	  // add bugs
 	  int i;
-	  // fix bugs i< 2
-      for (i = 0; i < 3; i++)
+	  
+      for (i = 0; i < 2; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}

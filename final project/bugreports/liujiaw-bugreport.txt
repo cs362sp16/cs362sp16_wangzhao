@@ -1,0 +1,8 @@
+After runing the test there exist a bug in int my_Village(int handPos, int currentPlayer, struct gameState *state) at line 673 in dominion.c
+
+line 679 shows 
+state->numActions = state->numActions + 1; //2
+
+which add one action however the village should add two actions
+
+so the statement should be state->numActions = state->numActions + 2;

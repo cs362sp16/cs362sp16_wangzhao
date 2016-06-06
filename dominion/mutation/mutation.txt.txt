@@ -1,0 +1,47 @@
+i use my random test to get the mutation test. the card i choose in random test are adventurer,smithy, and village.
+For each dominion.c i make four mutation in dominion.c in that card.
+in the adventurer:
+the first mutation i make is 
+while(z-1 !>=0){  // origin code z-1 >= 0 state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+	z=z-1;
+      }
+the original code is while(z-1 >=0){...}
+the second mutation i make is 
+ while(drawntreasure%2){ // origin code while(drawntreasure<2)
+the original code is
+while(drawntreasure<2)
+the third mutaion i make is 
+while(drawntreasure>=2){ // original code while(drawntreasure<2)
+the original code is while(drawntreasure<2)
+the last mutation i make is 
+cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]];
+the original code is cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
+
+in the smithy:
+the first mutation i make is 
+for (i = 0; i < 3; i = i + 2)
+the original code is for (i = 0; i < 3; i++)
+the second mutation i make is 
+// discardCard(handPos, currentPlayer, state, 0);
+the original code is discardCard(handPos, currentPlayer, state, 0);
+the third mutaion i make is
+discardCard(handPos, currentPlayer, state, 2);
+the original code is discardCard(handPos, currentPlayer, state, 0);
+the last mutation i make is 
+discardCard(handPos, currentPlayer+2, state, 0);
+the original code is discardCard(handPos, currentPlayer, state, 0);
+
+in the village:
+the first mutation i make is 
+drawCard(currentPlayer+1, state);
+the original code is drawCard(currentPlayer+1, state);
+the second mutation i make is 
+state->numActions = state->numActions % 2;
+the original code is state->numActions = state->numActions + 2;
+the third mutaion i make is
+discardCard(handPos+1, currentPlayer, state, 0);
+the original code is discardCard(handPos, currentPlayer, state, 0);
+the last mutation i make is 
+state->numActions = state->numActions * 2;
+the original code is state->numActions = state->numActions + 2;
+
